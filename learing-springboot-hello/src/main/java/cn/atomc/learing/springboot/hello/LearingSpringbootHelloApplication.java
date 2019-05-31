@@ -1,0 +1,13 @@
+package cn.atomc.learing.springboot.hello;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class LearingSpringbootHelloApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(LearingSpringbootHelloApplication.class, args);
+    }
+
+}
