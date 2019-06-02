@@ -1,8 +1,11 @@
 package cn.atomc.learing.springboot.web.web;
 
 import cn.atomc.learing.springboot.web.model.User;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,5 +51,17 @@ public class UserController {
         user2.setPassword("666");
         list.add(user2);
         return list;
+    }
+
+    @PostMapping("/valid")
+    public User saveUserValid(@Valid User user, BindingResult   result){
+        System.out.println("user:"+user);
+        if(result.hasErrors()) {
+            List<ObjectError> list = result.getAllErrors();
+            for (ObjectError error : list) {
+                System.out.println(error.getCode()+ "-" + error.getDefaultMessage());
+            }
+        }
+        return user;
     }
 }
