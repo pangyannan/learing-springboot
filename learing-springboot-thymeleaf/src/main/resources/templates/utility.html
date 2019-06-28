@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>model Thymeleaf 内置方法</title>
+</head>
+<body>
+<h2>model Thymeleaf 内置方法</h2>
+<h3>#strings </h3>
+<div th:if="${not #strings.isEmpty(modelStr)}" >
+    <p>Old Str : <span th:text="${modelStr}"/></p>
+    <p>toUpperCase : <span th:text="${#strings.toUpperCase(modelStr)}"/></p>
+    <p>toLowerCase : <span th:text="${#strings.toLowerCase(modelStr)}"/></p>
+    <p>equals : <span th:text="${#strings.equals(modelStr, 'modelblog')}"/></p>
+    <p>equalsIgnoreCase : <span th:text="${#strings.equalsIgnoreCase(modelStr, 'modelblog')}"/></p>
+    <p>indexOf : <span th:text="${#strings.indexOf(modelStr, 'r')}"/></p>
+    <p>substring : <span th:text="${#strings.substring(modelStr, 2, 8)}"/></p>
+    <p>replace : <span th:text="${#strings.replace(modelStr, 'it', 'IT')}"/></p>
+    <p>startsWith : <span th:text="${#strings.startsWith(modelStr, 'it')}"/></p>
+    <p>contains : <span th:text="${#strings.contains(modelStr, 'IT')}"/></p>
+</div>
+
+<h3>#numbers </h3>
+<div>
+    <p>formatDecimal 整数部分随意，小数点后保留两位，四舍五入: <span th:text="${#numbers.formatDecimal(modelNum, 0, 2)}"/></p>
+    <p>formatDecimal 整数部分保留五位数，小数点后保留两位，四舍五入: <span th:text="${#numbers.formatDecimal(modelNum, 5, 2)}"/></p>
+</div>
+
+<h3>#bools </h3>
+<div th:if="${#bools.isTrue(modelBool)}">
+    <p th:text="${modelBool}"></p>
+</div>
+
+<h3>#arrays </h3>
+<div th:if="${not #arrays.isEmpty(modelArray)}">
+    <p>length : <span th:text="${#arrays.length(modelArray)}"/></p>
+    <p>contains : <span th:text="${#arrays.contains(modelArray, 5)}"/></p>
+    <p>containsAll : <span th:text="${#arrays.containsAll(modelArray, modelArray)}"/></p>
+</div>
+<h3>#lists </h3>
+<div th:if="${not #lists.isEmpty(modelList)}">
+    <p>size : <span th:text="${#lists.size(modelList)}"/></p>
+    <p>contains : <span th:text="${#lists.contains(modelList, 0)}"/></p>
+    <p>sort : <span th:text="${#lists.sort(modelList)}"/></p>
+</div>
+<h3>#maps </h3>
+<div th:if="${not #maps.isEmpty(modelMap)}">
+    <p>size : <span th:text="${#maps.size(modelMap)}"/></p>
+    <p>containsKey : <span th:text="${#maps.containsKey(modelMap, 'thName')}"/></p>
+    <p>containsValue : <span th:text="${#maps.containsValue(modelMap, '#maps')}"/></p>
+</div>
+<h3>#dates </h3>
+<div>
+    <p>format : <span th:text="${#dates.format(modelDate)}"/></p>
+    <p>custom format : <span th:text="${#dates.format(modelDate, 'yyyy-MM-dd HH:mm:ss')}"/></p>
+    <p>day : <span th:text="${#dates.day(modelDate)}"/></p>
+    <p>month : <span th:text="${#dates.month(modelDate)}"/></p>
+    <p>monthName : <span th:text="${#dates.monthName(modelDate)}"/></p>
+    <p>year : <span th:text="${#dates.year(modelDate)}"/></p>
+    <p>dayOfWeekName : <span th:text="${#dates.dayOfWeekName(modelDate)}"/></p>
+    <p>hour : <span th:text="${#dates.hour(modelDate)}"/></p>
+    <p>minute : <span th:text="${#dates.minute(modelDate)}"/></p>
+    <p>second : <span th:text="${#dates.second(modelDate)}"/></p>
+    <p>createNow : <span th:text="${#dates.createNow()}"/></p>
+</div>
+</body>
+</html>
