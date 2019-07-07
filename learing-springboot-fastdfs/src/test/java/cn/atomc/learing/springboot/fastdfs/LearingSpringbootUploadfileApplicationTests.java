@@ -1,4 +1,4 @@
-package cn.atomc.learing.springboot.uploadfile;
+package cn.atomc.learing.springboot.fastdfs;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

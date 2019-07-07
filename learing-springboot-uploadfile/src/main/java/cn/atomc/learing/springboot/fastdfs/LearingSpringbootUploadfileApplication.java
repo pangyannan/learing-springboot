@@ -1,4 +1,4 @@
-package cn.atomc.learing.springboot.uploadfile;
+package cn.atomc.learing.springboot.fastdfs;
 
 import org.apache.coyote.http11.AbstractHttp11Protocol;
 import org.springframework.boot.SpringApplication;

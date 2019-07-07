@@ -1,4 +1,4 @@
-package cn.atomc.learing.springboot.uploadfile.controller;
+package cn.atomc.learing.springboot.fastdfs.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
