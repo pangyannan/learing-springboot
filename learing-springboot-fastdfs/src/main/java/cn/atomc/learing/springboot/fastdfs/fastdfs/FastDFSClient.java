@@ -38,7 +38,6 @@ public class FastDFSClient {
      */
     public static String[] upload(FastDFSFile file) {
         logger.info("File Name: " + file.getName() + "File Length:" + file.getContent().length);
-
         //文件属性信息，主要存储⽂文件的⼀一些基础属性，如作者信息、创建时间等；
         NameValuePair[] meta_list = new NameValuePair[1];
         meta_list[0] = new NameValuePair("author", file.getAuthor());
@@ -117,6 +116,8 @@ public class FastDFSClient {
         StorageClient storageClient = getStorageClient();
         int i = storageClient.delete_file(groupName, remoteFileName);
         logger.info("delete file successfully!!!" + i);
+
+
     }
 
     public static StorageServer[] getStoreStorages(String groupName)
